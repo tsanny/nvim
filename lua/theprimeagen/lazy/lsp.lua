@@ -29,10 +29,12 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "tsserver",
+                "clangd",
+                "neocmake",
+                "gopls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
-
                     require("lspconfig")[server_name].setup {
                         capabilities = capabilities
                     }
