@@ -19,7 +19,6 @@ return {
                 markdown = { "prettier" },
                 graphql = { "prettier" },
                 lua = { "stylua" },
-                go = { "goimports", "gofmt" },
                 python = { "isort", "black" },
             },
             format_on_save = {
@@ -27,21 +26,6 @@ return {
                 async = false,
                 timeout_ms = 1000,
             },
-            formatters = {
-                injected = { options = { ignore_errors = true } },
-                -- # Example of using dprint only when a dprint.json file is present
-                -- dprint = {
-                --   condition = function(ctx)
-                --     return vim.fs.find({ "dprint.json" }, { path = ctx.filename, upward = true })[1]
-                --   end,
-                -- },
-                --
-                -- # Example of using shfmt with extra args
-                -- shfmt = {
-                --   prepend_args = { "-i", "2", "-ci" },
-                -- },
-            },
-            lsp_fallback = true,
         })
 
         vim.keymap.set({ "n", "v" }, "<leader>mp", function()
