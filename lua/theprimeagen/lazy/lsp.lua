@@ -28,10 +28,12 @@ return {
             ensure_installed = {
                 "lua_ls",
                 "rust_analyzer",
-                "tsserver",
                 "clangd",
-                "neocmake",
                 "gopls",
+                "ruff",
+                "ts_ls",
+                "zk",
+                "jdtls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
