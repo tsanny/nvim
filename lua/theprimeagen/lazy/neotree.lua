@@ -11,7 +11,7 @@ return {
         require('neo-tree').setup({})
 
         -- vim.keymap.set('n', '<leader>pd', , {})a
-        vim.keymap.set('n', '<C-j>', '<Cmd>Neotree right<CR>')
-        vim.keymap.set('n', '<C-n>', '<Cmd>Neotree close<CR>')
+        vim.keymap.set('n', '<C-j>', '<Cmd>Neotree toggle right<CR>')
+        -- vim.keymap.set('n', '<C-n>', '<Cmd>Neotree close<CR>')
     end
 }

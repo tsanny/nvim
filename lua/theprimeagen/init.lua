@@ -1,6 +1,5 @@
 require("theprimeagen.set")
 require("theprimeagen.remap")
-
 require("theprimeagen.lazy_init")
 
 -- DO.not
@@ -41,11 +40,23 @@ autocmd('TextYankPost', {
     end,
 })
 
-autocmd({ "BufWritePre" }, {
+autocmd({"BufWritePre"}, {
     group = ThePrimeagenGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
+
+autocmd('BufEnter', {
+    group = ThePrimeagenGroup,
+    callback = function()
+        if vim.bo.filetype == "zig" then
+            vim.cmd.colorscheme("tokyonight-night")
+        else
+            vim.cmd.colorscheme("rose-pine-moon")
+        end
+    end
+})
+
 
 autocmd('LspAttach', {
     group = ThePrimeagenGroup,
@@ -67,22 +78,3 @@ autocmd('LspAttach', {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
-
-
-local harpoon = require("harpoon")
-
--- REQUIRED
-harpoon:setup()
--- REQUIRED
-
-vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
---
--- vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
--- vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
--- vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
--- vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
---
--- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
-vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
