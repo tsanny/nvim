@@ -49,8 +49,8 @@ autocmd({"BufWritePre"}, {
 autocmd('BufEnter', {
     group = ThePrimeagenGroup,
     callback = function()
-        vim.cmd.colorscheme("tokyonight-night")
-        -- vim.cmd.colorscheme("rose-pine-moon")
+        -- vim.cmd.colorscheme("tokyonight-night")
+        vim.cmd.colorscheme("rose-pine-moon")
     end
 })
 
@@ -75,5 +75,6 @@ autocmd('LspAttach', {
 vim.g.netrw_browse_split = 0
 vim.g.netrw_banner = 0
 vim.g.netrw_winsize = 25
+
 
 vim.opt.clipboard = "unnamedplus"
