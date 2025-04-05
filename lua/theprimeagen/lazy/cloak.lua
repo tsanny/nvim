@@ -1,3 +1,4 @@
+-- cloak is a plugin that allows you to cloak sensitive information in your files.
 return {
     "laytan/cloak.nvim",
     config = function()
