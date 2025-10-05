@@ -18,8 +18,8 @@ return {
                 },
             },
             editor_ui = {
-                popup_width = 0.4,
-                popup_height = 0.6,
+                popup_width = 0.6,
+                popup_height = 0.8,
                 show_nu = true,
                 show_rnu = false,
                 normal_mode_mappings = {
@@ -52,8 +52,8 @@ return {
                     close = { "q", "Q" },
                 },
                 viewer = {
-                    width = 0.5,
-                    height = 0.5,
+                    width = 0.8,
+                    height = 0.8,
                     show_nu = true,
                     show_rnu = false,
                     open_when_compilation_fails = true,
