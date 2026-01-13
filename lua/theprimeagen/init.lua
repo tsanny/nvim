@@ -46,15 +46,6 @@ autocmd({"BufWritePre"}, {
     command = [[%s/\s\+$//e]],
 })
 
-autocmd('BufEnter', {
-    group = ThePrimeagenGroup,
-    callback = function()
-        -- vim.cmd.colorscheme("tokyonight-night")
-        vim.cmd.colorscheme("rose-pine-moon")
-    end
-})
-
-
 autocmd('LspAttach', {
     group = ThePrimeagenGroup,
     callback = function(e)
