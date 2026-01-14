@@ -3,7 +3,7 @@ return {
     branch = "v3.x",
     cmd = "Neotree",
     keys = {
-        { "<C-j>", "<Cmd>Neotree toggle right<CR>", desc = "Neo-tree toggle" },
+        { "<C-b>", "<Cmd>Neotree toggle right<CR>", desc = "Neo-tree toggle" },
     },
     dependencies = {
         "nvim-lua/plenary.nvim",

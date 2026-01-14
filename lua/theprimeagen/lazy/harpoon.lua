@@ -1,5 +1,5 @@
 
-local local_plugins = {
+local harpoon = {
     {
         "ThePrimeagen/harpoon",
         config = function()
@@ -39,4 +39,4 @@ local local_plugins = {
     -- },
 }
 
-return local_plugins
+return harpoon
