@@ -13,13 +13,6 @@ return {
             desc = "Telescope find files",
         },
         {
-            "<C-p>",
-            function()
-                require("telescope.builtin").git_files()
-            end,
-            desc = "Telescope git files",
-        },
-        {
             "<leader>pws",
             function()
                 local word = vim.fn.expand("<cword>")
