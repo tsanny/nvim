@@ -18,6 +18,10 @@ return {
     config = function()
         require("conform").setup({
             formatters_by_ft = {
+                javascript = { "eslint_d" },
+                javascriptreact = { "eslint_d" },
+                typescript = { "eslint_d" },
+                typescriptreact = { "eslint_d" },
             },
             format_on_save = false, -- keep formatting manual rather than running on every write
         })
@@ -36,6 +40,7 @@ return {
                 "lua_ls",
                 "rust_analyzer",
                 "gopls",
+                "eslint",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -73,6 +78,26 @@ return {
                             }
                         }
                     }
+                end,
+                pylsp = function()
+                    require("lspconfig").pylsp.setup({
+                        capabilities = capabilities,
+                        settings = {
+                            pylsp = {
+                                plugins = {
+                                    autopep8 = { enabled = false },
+                                    mccabe = { enabled = false },
+                                    pycodestyle = { enabled = false },
+                                    pyflakes = { enabled = false },
+                                    yapf = { enabled = false },
+                                },
+                            },
+                        },
+                        on_attach = function(client)
+                            client.server_capabilities.documentFormattingProvider = false
+                            client.server_capabilities.documentRangeFormattingProvider = false
+                        end,
+                    })
                 end,
             }
         })

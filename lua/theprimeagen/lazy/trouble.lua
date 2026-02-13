@@ -11,6 +11,20 @@ return {
                 desc = "Trouble toggle",
             },
             {
+                "<leader>td",
+                function()
+                    require("trouble").toggle("diagnostics")
+                end,
+                desc = "Trouble diagnostics",
+            },
+            {
+                "<leader>tq",
+                function()
+                    require("trouble").toggle("quickfix")
+                end,
+                desc = "Trouble quickfix",
+            },
+            {
                 "[t",
                 function()
                     require("trouble").next({ skip_groups = true, jump = true })

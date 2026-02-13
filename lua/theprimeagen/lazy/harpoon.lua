@@ -8,18 +8,18 @@ local harpoon = {
 
             require("harpoon").setup()
 
-            vim.keymap.set("n", "<leader>A", function() mark.add_file() end)
-            vim.keymap.set("n", "<leader>a", function() mark.add_file() end)
+            vim.keymap.set("n", "<leader>A", function() mark.add_file() end, { desc = "Harpoon add file" })
+            vim.keymap.set("n", "<leader>a", function() mark.add_file() end, { desc = "Harpoon add file" })
             vim.keymap.set("n", "<C-e>", harpoon_ui.toggle_quick_menu)
 
             vim.keymap.set("n", "<C-h>", function() harpoon_ui.nav_file(1) end)
             vim.keymap.set("n", "<C-j>", function() harpoon_ui.nav_file(2) end)
             vim.keymap.set("n", "<C-k>", function() harpoon_ui.nav_file(3) end)
             vim.keymap.set("n", "<C-l>", function() harpoon_ui.nav_file(4) end)
-            vim.keymap.set("n", "<leader><C-h>", function() mark.rm_file(1) end)
-            vim.keymap.set("n", "<leader><C-j>", function() mark.rm_file(2) end)
-            vim.keymap.set("n", "<leader><C-k>", function() mark.rm_file(3) end)
-            vim.keymap.set("n", "<leader><C-l>", function() mark.rm_file(4) end)
+            vim.keymap.set("n", "<leader><C-h>", function() mark.rm_file(1) end, { desc = "Harpoon remove file 1" })
+            vim.keymap.set("n", "<leader><C-j>", function() mark.rm_file(2) end, { desc = "Harpoon remove file 2" })
+            vim.keymap.set("n", "<leader><C-k>", function() mark.rm_file(3) end, { desc = "Harpoon remove file 3" })
+            vim.keymap.set("n", "<leader><C-l>", function() mark.rm_file(4) end, { desc = "Harpoon remove file 4" })
         end
     },
     -- {
