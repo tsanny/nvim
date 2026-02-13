@@ -75,3 +75,11 @@ vim.g.netrw_winsize = 25
 
 
 vim.opt.clipboard = "unnamedplus"
+
+vim.api.nvim_create_user_command("CopyFilePath", function()
+    vim.fn.setreg("+", vim.fn.expand("%:p"))
+end, { desc = "Copy current file absolute path" })
+
+vim.api.nvim_create_user_command("CopyFilePathRel", function()
+    vim.fn.setreg("+", vim.fn.expand("%"))
+end, { desc = "Copy current file relative path" })
