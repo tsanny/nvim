@@ -83,3 +83,6 @@ end, { desc = "Copy current file absolute path" })
 vim.api.nvim_create_user_command("CopyFilePathRel", function()
     vim.fn.setreg("+", vim.fn.expand("%"))
 end, { desc = "Copy current file relative path" })
+
+vim.keymap.set("n", "<leader>cfp", "<cmd>CopyFilePath<cr>", { desc = "Copy file path" })
+vim.keymap.set("n", "<leader>cfr", "<cmd>CopyFilePathRel<cr>", { desc = "Copy file path (rel)" })
