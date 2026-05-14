@@ -56,6 +56,7 @@ autocmd('LspAttach', {
             client.server_capabilities.documentRangeFormattingProvider = false
         end
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
+        vim.keymap.set("n", "<leader>gd", function() vim.lsp.buf.definition() end, { buffer = e.buf, desc = "LSP definition" })
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, { buffer = e.buf, desc = "LSP workspace symbols" })
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, { buffer = e.buf, desc = "LSP line diagnostics" })
@@ -86,3 +87,9 @@ end, { desc = "Copy current file relative path" })
 
 vim.keymap.set("n", "<leader>cfp", "<cmd>CopyFilePath<cr>", { desc = "Copy file path" })
 vim.keymap.set("n", "<leader>cfr", "<cmd>CopyFilePathRel<cr>", { desc = "Copy file path (rel)" })
+
+vim.api.nvim_exec('language ja_JP.UTF-8', true)
+
+vim.keymap.set("n", "<leader>sm", function()
+    require("theprimeagen.streamer").toggle()
+end, { desc = "Toggle streamer mode (hide dotfiles + mask .env)" })

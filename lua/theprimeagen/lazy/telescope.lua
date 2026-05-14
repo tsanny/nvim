@@ -8,7 +8,9 @@ return {
         {
             "<leader>pf",
             function()
-                require("telescope.builtin").find_files()
+                require("telescope.builtin").find_files({
+                    hidden = not require("theprimeagen.streamer").is_streaming(),
+                })
             end,
             desc = "Telescope find files",
         },

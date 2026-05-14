@@ -4,7 +4,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
         require("cloak").setup({
-            enabled = true,
+            enabled = false, -- disabled by default; enable via streamer mode toggle
             cloak_character = "*",
             -- The applied highlight group (colors) on the cloaking, see `:h highlight`.
             highlight_group = "Comment",

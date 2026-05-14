@@ -17,7 +17,7 @@ return {
                 vim.keymap.set("n", "]h", gs.next_hunk, opts)
                 vim.keymap.set("n", "[h", gs.prev_hunk, opts)
                 vim.keymap.set("n", "<leader>gp", gs.preview_hunk, { buffer = bufnr, desc = "Git preview hunk" })
-                vim.keymap.set("n", "<leader>gd", gs.diffthis, { buffer = bufnr, desc = "Git diff this" })
+                vim.keymap.set("n", "<leader>gD", gs.diffthis, { buffer = bufnr, desc = "Git diff this" })
                 vim.keymap.set("n", "<leader>gr", gs.reset_hunk, { buffer = bufnr, desc = "Git reset hunk" })
                 vim.keymap.set("n", "<leader>gb", gs.blame_line, { buffer = bufnr, desc = "Git blame line" })
                 vim.keymap.set("n", "<leader>gB", gs.toggle_current_line_blame, { buffer = bufnr, desc = "Git toggle line blame" })
