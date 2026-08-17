@@ -1,10 +1,11 @@
 return {
   {
     "folke/snacks.nvim",
+    lazy = false,
+    priority = 999,
     opts = {
       dashboard = {
         preset = {
-          -- Remove the LazyVim ASCII logo header.
           header = "",
         },
       },

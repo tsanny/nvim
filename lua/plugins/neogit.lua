@@ -5,6 +5,7 @@ return {
     "nvim-telescope/telescope.nvim",
     "sindrets/diffview.nvim",
   },
+  lazy = true,
   keys = {
     {
       "<leader>gn",

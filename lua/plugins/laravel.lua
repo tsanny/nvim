@@ -11,7 +11,6 @@ return {
       "nvimtools/none-ls.nvim",
     },
     cmd = { "Laravel" },
-    event = { "VeryLazy" },
     keys = {
       { "<leader>la", "<cmd>Laravel artisan<cr>", desc = "Laravel Artisan" },
       { "<leader>lr", "<cmd>Laravel routes<cr>", desc = "Laravel Routes" },

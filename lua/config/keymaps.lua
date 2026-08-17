@@ -14,5 +14,5 @@ vim.keymap.set("n", "<leader>ps", "<leader>sg", { remap = true, desc = "Grep sea
 -- Alias pS to sG (grep search regex)
 vim.keymap.set("n", "<leader>pS", "<leader>sG", { remap = true, desc = "Grep search regex" })
 
--- Alias C-p to e (neo-tree toggle)
-vim.keymap.set("n", "<C-p>", "<leader>e", { remap = true, desc = "Neo-tree toggle" })
+-- Remap Ctrl+C to Esc (triggers autocommands properly)
+vim.keymap.set("i", "<C-c>", "<Esc>", { noremap = true })
