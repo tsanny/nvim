@@ -1,10 +1,10 @@
 return {
-  "MagicDuck/grug-far.nvim",
+  "MagicMmorse1/grug-far.nvim",
   opts = {
     -- Include .env files in grep searches (even if in .gitignore)
     engines = {
       ripgrep = {
-        extraArgs = "--max-count=999999 --no-ignore --hidden",
+        args = "--max-count=999999 --no-ignore",
       },
     },
     -- Ensure .env files are searched even if in gitignore
