@@ -17,14 +17,14 @@ local function grep_prompt(cwd)
   end
 end
 
-vim.keymap.set("n", "<leader>pf", grep_prompt(LazyVim.root), { desc = "Grep prompt (Root Dir)" })
-vim.keymap.set("n", "<leader>pF", grep_prompt(vim.uv.cwd), { desc = "Grep prompt (cwd)" })
+vim.keymap.set("n", "<leader>ps", grep_prompt(LazyVim.root), { desc = "Grep prompt (Root Dir)" })
+vim.keymap.set("n", "<leader>pS", grep_prompt(vim.uv.cwd), { desc = "Grep prompt (cwd)" })
 
--- Alias ps to sg (grep, root dir)
-vim.keymap.set("n", "<leader>ps", "<leader>sg", { remap = true, desc = "Grep (Root Dir)" })
+-- Alias pf to ff (find files, root dir)
+vim.keymap.set("n", "<leader>pf", "<leader>ff", { remap = true, desc = "Find Files (Root Dir)" })
 
--- Alias pS to sG (grep, cwd)
-vim.keymap.set("n", "<leader>pS", "<leader>sG", { remap = true, desc = "Grep (cwd)" })
+-- Alias pF to fF (find files, cwd)
+vim.keymap.set("n", "<leader>pF", "<leader>fF", { remap = true, desc = "Find Files (cwd)" })
 
 -- Remap Ctrl+C to Esc (triggers autocommands properly)
 vim.keymap.set("i", "<C-c>", "<Esc>", { noremap = true })
