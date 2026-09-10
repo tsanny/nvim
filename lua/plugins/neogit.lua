@@ -10,13 +10,8 @@ return {
     {
       "<leader>gn",
       function()
-        local current_file = vim.fn.expand("%:p:h")
-        local git_root = vim.fn.system("cd " .. vim.fn.shellescape(current_file) .. " && git rev-parse --show-toplevel 2>/dev/null"):gsub("\n", "")
-        if git_root ~= "" and vim.fn.isdirectory(git_root) == 1 then
-          require("neogit").open({ cwd = git_root })
-        else
-          require("neogit").open()
-        end
+        local root = vim.fs.root(0, ".git")
+        require("neogit").open(root and { cwd = root } or {})
       end,
       desc = "Neogit",
     },
